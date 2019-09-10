@@ -11,7 +11,7 @@
 	<h2> Register Buyer </h2>
 	
 		
-	<form action="/buyerFunctionality">
+	<form action="/checkregisterBuyer" method="post">
 		
 		
 		<div class="row">
@@ -24,10 +24,23 @@
  		 <input type="text" name="password"> <br> <br>
 			Email:
  		 <input type="text" name="email"> <br> <br>
-			Address:
- 		 <input type="text" name="address"> <br> <br>	
+			House Number:
+ 		 <input type="text" name="houseNo"> <br> <br>
+			Street Name:
+ 		 <input type="text" name="street"> <br> <br>	
 			City:
  		 <input type="text" name="city"> <br> <br>
+			Default Payment:
+ 		 <select name="payment">
+		      <option value="VISA">VISA</option>
+		      <option value="Debt">Debt</option>
+		      <option value="Check">Check</option>
+			  <option value="AE">American Express</option>
+		 </select> <br><br>
+			Account Number:
+ 		 <input type="text" name="accNo"> <br> <br>
+			Routing Number:
+ 		 <input type="text" name="routingNo"> <br> <br>
 				
 			</div>
  		 	<div class="column">
@@ -43,6 +56,21 @@
  		 <input type="text" name="zip"> <br> <br>
 			</div>
 		</div>
+			Assign Store:
+			
+			<select name="dsID">
+		  {% for i in  store %}
+		      
+		   	 <option  value={{i[0]}}> {{i[0]}}, {{i[1]}}  </option>
+		  
+		  {% endfor %}
+	
+		    </select>
+
+     
+		
+ 		  <br> <br>
+		
 	   	
 		
 		
@@ -56,14 +84,14 @@
 		
 		
 	  <input type="submit" value="Register"> <br> <br>
-		
+
 	</form>
 	
 		
 		<form action="/registrationType">
 	  <input type="submit" value="Back" >
 		</form>
-	
+	<p id = "feedback"  style="color: red">{{error}}</p>
 
 </body>
 

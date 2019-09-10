@@ -1,0 +1,55 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>list of stores</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> List Of Stores</h2>
+	
+		
+		<form action="/checkStoreHomepage" method="post">
+		
+		
+		<table>
+		  <tr>
+		    <th>Store Name</th>
+		    <th>Address</th>
+		    <th>Phone</th>
+		    <th>Hours Today</th>
+		  </tr>
+			{%for i in info %} 
+		  <tr>
+		    <td><input type="radio" name="store" value={{i[0]}}> {{i[1]}}</td>
+		    <td> {{i[2]}} {{i[3]}} {{i[4]}} {{i[5]}} {{i[6]}}</td>
+		    <td>{{i[7]}}</td>
+		 <td>{{i[8]}} to {{i[9]}}</td>
+		  </tr>
+			
+		  {% endfor %}
+		</table>
+				
+	  <input type="submit" value="Select"> <br> <br>
+
+	</form>
+	
+		
+	<br><br>
+ 		
+
+				<form action="/buyerFunctionality" method="post">
+				  <input type="submit" value="Back" color ="blue">
+					</form> 
+		
+
+</body>
+
+	
+	
+	
+	
+	
+</html>

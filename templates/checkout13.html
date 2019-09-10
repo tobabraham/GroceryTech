@@ -1,0 +1,68 @@
+    
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>Checkout</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Checkout </h2>
+	
+		
+	<form action="/checkCheckout" method="post">
+	    <div class="row">
+          <div class="column">
+		   Payment: 
+        <select name ="payment" >
+       
+      <option value="Default">Default</option>
+      <option value="Other">Other</option>
+
+    </select>
+          </div>
+          <div class="column">
+          Delivery time: 
+		  <select name ="deliveryTime">
+      <option value="ASAP">ASAP</option>
+      <option value="1 hour">1 hour</option>
+       <option value="2 hour">2 hour</option>
+        <option value="5 hour">5 hour</option>
+         <option value="10 hour">10 hour</option>
+          <option value="12 hour">12 hour</option>
+           <option value="24 hour">24 hour</option>
+		  </select>
+           <br> 
+            
+    </select>
+    
+          </div>
+          
+    </div>
+	<br> 
+	Total Price ($): {% for i in total %} {{i}} {%endfor %}
+
+ 		 <br><br>
+	  	
+	<br><br>
+	Delivery Instructions:  <input type="text" name ='deliveryInstructions' value=" "> <br><br>
+	  <input type="submit" value="Finalize Order"> <br> <br>
+		
+	</form>
+	
+		
+		<form action="/cart">
+	  <input type="submit" value="Back" >
+		</form>
+	
+
+</body>
+
+	
+	
+	
+	
+	
+</html>

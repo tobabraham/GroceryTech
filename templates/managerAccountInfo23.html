@@ -1,0 +1,79 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title> Manager Account Information </title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Manager Account Information </h2>
+	
+  
+  
+    <form action="/updateManagerAccInfo" method="post">
+  <div class="row">
+  <div class="column">
+     First Name:  
+ 		<input type="text" name="fname" value= {{ dictry["fname"] }}>    <br> <br>
+     Username:  {{ dictry["uname"] }}
+ 		<br> <br>
+ 	 Managed Grocery Store:  {{ dictry["storename"] }}
+	  
+	  <!--
+	  <select name="prefStore">
+		  {% for i in  stores %}
+		      {%if i[0] == dictry["storeID"]%}
+	  		 <option  selected value={{i[0]}}> {{i[0]}}, {{i[1]}}  </option>
+	  		{% else %}
+		   	 <option  value={{i[0]}}> {{i[0]}}, {{i[1]}}  </option>
+		  	{% endif %}
+		  {% endfor %}
+-->
+		  <!--
+	  	{% for i in  sel %}
+	  		 <option name="prefStore" {{sel[j]}} value="{{sel[0]}}">{{sel[0]}},{{sel[1]}}  </option>
+	  	{%endfor%} 
+	</select > -->
+ 	 	<br> <br>
+     Email:
+ 		 <input type="text" name="email" value= {{ dictry["email"] }}> <br> <br>
+  </div> 
+
+  <div class="column">
+     Last Name:  
+ 		<input type="text" name="lname" value= {{ dictry["lname"] }}> <br> <br>
+     Phone:
+ 		 {{ dictry["phone"] }} <br> <br>
+	  Store Address: <br> 
+	 
+ 		{{ dictry["houseNo"] }} {{ dictry["street"] }}
+	  {{ dictry["city"] }}, {{ dictry["state"] }} {{ dictry["zipp"] }} <br> <br>
+     
+  </div>
+  </div>
+		
+
+	  <input type="submit" value="update"> <br> <br>
+		
+	</form>
+	
+		
+		<form action="/managerFunctionality">
+	  <input type="submit" value="Back" >
+		</form>
+    
+    <form action="/deleteAccountInfo">
+	  <input type="submit" value="Delete Account" >
+		</form>
+	
+<p id = "feedback"  style="color: red">{{error}}</p>
+</body>
+
+	
+	
+	
+	
+	
+</html>

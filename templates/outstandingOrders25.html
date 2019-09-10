@@ -1,0 +1,58 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>Outstanding Orders</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Outstanding Orders</h2>
+	
+		
+		
+		
+		<table>
+		  <tr>
+		    <th>Store Name</th>
+		    <th>Store Address</th>
+		    <th>Order Id</th>
+		<th>Date</th>
+		<th>Total Price</th>
+		<th>Total Number Of Items</th>
+		<th>Delivery Address</th>
+		  </tr>
+			{% for i in info %}
+			
+		  <tr>
+		    <td>{{i[0]}}</td>
+		    <td>{{i[1]}}</td>
+		    <td>{{i[2]}}</td>
+			<td>{{i[3]}}</td>
+			<td>{{i[4]}}</td>
+			<td>{{i[5]}}</td>
+			<td>{{i[6]}}</td>
+		  </tr>
+		{% endfor %}
+       
+		</table>
+				
+
+	
+		
+ <br <br> 
+
+				<form action="/managerFunctionality" method="post">
+				  <input type="submit" value="Back" color ="blue">
+					</form> 
+			
+
+</body>
+
+	
+	
+	
+	
+	
+</html>

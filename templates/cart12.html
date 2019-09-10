@@ -1,0 +1,80 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>cart</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Cart</h2>
+	
+		
+		<form action="/deleteFromCart" method="post">
+		
+		
+		<table>
+		  <tr>
+		    <th>Item Name</th>
+		    <th>Description</th>
+		    <th>Quantity</th>
+		    <th>Price</th>
+		   <th>In Stock</th>
+		  </tr>
+		{% for i in info %}
+		  <tr>
+		    <td><input type="radio" name="itemID" value={{i[0]}} > {{i[1]}} </td>
+		    <td> {{i[2]}}</td>
+		    <td>{{i[3]}}</td>
+		 <td>{{i[4]}}</td>
+			<td>{{i[5]}}</td>  
+			  <!--
+			  {% if i[5] == 0 %}
+			  <td> No </td>
+			  {% else %}
+			  <td> Yes </td>
+			  {% endif %}
+			  -->
+		  </tr>
+			
+		{% endfor %}
+		
+		 
+		
+		</table>
+				
+	  <input type="submit" value="Delete"> <br> <br>
+
+	</form>
+	
+		<div class="row"> 
+			
+			
+			<div class="column">
+				
+				<form action="/findItem" method="post">
+				  <input type="submit" value="Back" color ="blue">
+					</form> 
+			
+			</div>
+			<div class="column">
+				
+			<form action="/checkout" method="post">
+				  <input type="submit" value="Checkout" color ="blue">
+					</form> 
+			
+			</div>
+		</div>
+ 
+
+
+				
+</body>
+
+	
+	
+	
+	
+	
+</html>

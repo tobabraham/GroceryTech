@@ -1,0 +1,53 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>New Payment</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> New Payment </h2>
+	
+		
+	<form action="/addNewPayment" method="post">
+		Payment Name:
+ 	
+ 		 <select name="payment">
+		      <option value="VISA">VISA</option>
+		      <option value="Debt">Debt</option>
+		      <option value="Check">Check</option>
+			  <option value="American Express">American Express</option>
+		 </select> <br><br>
+     Account Number:
+ 		 <input type="text" name="accName"> <br> <br>
+     Routing Number:
+ 		 <input type="text" name="routingNo"> <br> <br>
+    
+	<!--	
+	Default:
+    <select>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      
+    </select> 
+    <br><br> -->
+    
+    <input type="submit" value="Add Payment"> <br> <br>
+
+	</form>
+	
+		
+		<form action="/paymentMethods">
+	  <input type="submit" value="Back" >
+		</form>
+     <p id = "feedback"  style="color: red">{{error}}</p>
+</body>
+
+	
+	
+	
+	
+	
+</html>

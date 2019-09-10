@@ -1,0 +1,66 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>Assignment</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Assignment</h2>
+	
+		
+	<form action="/updateDeliveryInfo" method="post">
+        Order Placed:  {{dictry["order_placed"]}}
+ 		 <br>  <br>
+		Delivery Time:
+ 		 {{dictry["delivery_time"]}} <br> <br>
+        
+   	Buyer Address:
+ 		 {{dictry["address"]}}  <br> <br>
+     Store Name:
+ 		{{dictry["storeName"]}} <br> <br>
+	 Status:
+ 		 <select name ="status">
+          <option value = "0" >Pending</option>
+           <option value = "1" >Delivered</option>
+		  </select>
+		<br><br>
+    
+    <div class="row">
+	  <div class="column">
+	  Item Name: <br><br>
+		  {% for i in iandq %}
+		    {{i[0]}} <br> <br>
+		  {%endfor %}
+	    </div>
+	<div class="column">
+		
+	  Quantity: <br><br>
+		{% for i in iandq %}
+		{{i[1]}} <br> <br>
+		  {%endfor %}
+	    </div>
+		
+	</div>
+    
+    
+    <input type="submit" value="Update Status"> <br> <br>
+
+	</form>
+	
+  <form action="/assignments">
+	  <input type="submit" value="Back" >
+		</form>
+		
+		
+    
+</body>
+
+	
+	
+	
+	
+	
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>Order History</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Order History</h2>
+	
+		
+		<form action="/viewOrderB" method="post">
+		
+		
+		<table>
+		  <tr>
+		    <th>Store Name</th>
+		    <th>Order ID</th>
+		    <th>Date</th>
+		    <th>Total Price</th>
+		    <th>Total Number Of Items</th>
+		    <th>Delivered</th>
+		    
+		  
+		  </tr>
+			{%for i in info %} 
+				<tr>
+				
+		   	 <td><input type="radio" name="store" value={{i[1]}}>{{i[0]}}</td>
+		   	 <td>{{i[1]}}</td>
+		   	 <td>{{i[2]}}</td>
+			<td>{{i[3]}}</td>
+			<td>{{i[4]}}</td>
+				{% if i[5] == 1 %}
+					<td> 'Yes' </td>
+				{%else %}
+					<td> 'No' </td> 
+				{%endif%}
+				
+			{% endfor %}
+				<!--	
+			{%for j in isDel %} 
+				<td>{{j}}</td>
+			{% endfor %} -->
+			
+		
+		</table>
+				
+	  <input type="submit" value="View Order Details"> <br> <br>
+
+	</form>
+
+	<br><br>
+ 		
+
+				<form action="/buyerFunctionality" method="post">
+				  <input type="submit" value="Back" color ="blue">
+					</form> 
+
+</body>
+
+	
+	
+	
+	
+	
+</html>

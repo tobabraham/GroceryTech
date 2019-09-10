@@ -1,0 +1,78 @@
+<!DOCTYPE HTML> 
+
+<html>
+	<head>
+		<title>Payment Methods</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+	</head>
+<body>
+
+	
+	<h2> Payment Methods</h2>
+	
+		
+		<form action="/changeDefaultPayment" method="post">
+		
+		
+		<table>
+		  <tr>
+		    <th>Payment Name</th>
+		    <th>Account Number</th>
+		    <th>Routing Number</th>
+		    <th>Default</th>
+		  </tr>
+			
+			{%  for i in payment %}
+				{% if i[1] == i[0] %}
+				  <tr>
+				    <td><input type="radio" name="paymentName" value= "{{i[1]}}"> {{i[1]}} </td>
+				    <td>{{i[2]}}</td>
+				    <td>{{i[3]}}</td>
+				   <td> Yes</td>
+				   </tr>
+				{% else %}
+				 <tr>
+				    <td><input type="radio" name="paymentName" value="{{i[1]}}"> {{i[1]}} </td>
+				    <td>{{i[2]}}</td>
+				    <td> {{i[3]}}</td>
+				   <td> No</td>
+				   </tr>
+				{%endif %}
+			
+			{% endfor %}
+			
+			
+		
+		</table>
+				
+	   <input type="submit" value="Change to Default" color ="blue">
+
+	</form>
+		<div class="row"> 
+			<div class="column">
+				<form action="/buyerFunctionality" method="post">
+				  <input type="submit" value="Back" color ="blue">
+					</form> 
+			</div>
+			
+			<div class="column">
+				<form action="/newPayment" method="post">
+				  <input type="submit" value="Add New Payment" color ="blue">
+					</form> 
+			</div>
+			
+		</div>
+	<br><br>
+	<form action="/checkout" method="post">
+				  <input type="submit" value="Check Out" color ="blue">
+					</form> 
+ <p id = "feedback"  style="color: red">{{error}}</p>
+
+</body>
+
+	
+	
+	
+	
+	
+</html>
